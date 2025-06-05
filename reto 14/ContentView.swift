@@ -15,6 +15,7 @@ struct ContentView: View {
                 .foregroundStyle(.tint)
             Text("Hello, world!")
             LightSwitchView()
+            LightSwitchView1()
         }
         .padding()
     }
@@ -30,6 +31,20 @@ struct LightSwitchView: View{
                 .foregroundColor(light ? .yellow: .white)
         }
         Text(light ? "¡Luz encendida!" : "Luz apagada")
+            .font(.headline)
+            .padding(.top, 10)
+    }
+}
+struct LightSwitchView1: View{
+    @State private var light1 = false
+    var body: some View{
+        Button (action:{
+            light1.toggle()
+        }){
+            Image(systemName: "lightbulb.fill")
+                .foregroundColor(light1 ? .yellow: .white)
+        }
+        Text(light1 ? "¡Luz encendida!" : "Luz apagada")
             .font(.headline)
             .padding(.top, 10)
     }
